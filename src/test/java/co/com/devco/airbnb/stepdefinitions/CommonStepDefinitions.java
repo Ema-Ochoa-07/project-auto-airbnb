@@ -31,7 +31,7 @@ public class CommonStepDefinitions {
         );
     }
 
-    @Dado("(que ){actor} cambia el idioma a inglés (Estados Unidos)")
+    @Dado("(que ){actor} está navegando en Airbnb con la interfaz en español")
     public void cambiarIdiomaInglesEstadosUnidos(Actor actor) {
         actor.attemptsTo(
                 Open.browserOn().the(AirBnbHomePage.class),
