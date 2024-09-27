@@ -2,6 +2,7 @@ package co.com.devco.airbnb.stepdefinitions;
 
 import co.com.devco.airbnb.page.AirBnbHomePage;
 import co.com.devco.airbnb.task.SeleccionarEstadia;
+import co.com.devco.airbnb.task.CambiarIdioma;
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;
 import io.cucumber.java.es.Dado;
@@ -27,6 +28,14 @@ public class CommonStepDefinitions {
         actor.attemptsTo(
                 Open.browserOn().the(AirBnbHomePage.class),
                 SeleccionarEstadia.con(lugarEstadia, diasEstadia, cantidadIndividuo, tipoIndividuo)
+        );
+    }
+
+    @Dado("(que ){actor} cambia el idioma a inglés (Estados Unidos)")
+    public void cambiarIdiomaInglesEstadosUnidos(Actor actor) {
+        actor.attemptsTo(
+                Open.browserOn().the(AirBnbHomePage.class),
+                CambiarIdioma.a("English (United States)")
         );
     }
 }
