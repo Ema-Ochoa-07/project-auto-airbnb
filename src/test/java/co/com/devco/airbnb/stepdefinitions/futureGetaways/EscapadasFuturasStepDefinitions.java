@@ -1,4 +1,4 @@
-package co.com.devco.airbnb.stepdefinitions.changeLanguage;
+package co.com.devco.airbnb.stepdefinitions.futureGetaways;
 
 import co.com.devco.airbnb.page.AirBnbHomePage;
 import co.com.devco.airbnb.page.changeLanguage.ActualizacionInglesAirBnbPage;
@@ -10,28 +10,28 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
-public class CambioIdiomaStepDefinitions {
+public class EscapadasFuturasStepDefinitions {
 
-    @Dado("(que ){actor} está navegando en Airbnb con la interfaz en español")
-    public void cambiarIdiomaInglesEstadosUnidos(Actor actor) {
+
+    @Dado("(que ){actor} busca una escapada futura en Airbnb por {string} y {string} ")
+    public void seleccionarCiudad(Actor actor, String tipoEscapadas, String ciudad) {
         actor.attemptsTo(
                 Open.browserOn().the(AirBnbHomePage.class)
 
         );
     }
 
-
-    @Cuando("{actor} cambie el idioma de la interfaz a inglés")
-    public void cambiarIdiomaIngles(Actor actor) {
+    @Cuando("{actor} agende la {int} y {int}")
+    public void agendarLlegadaSalida(Actor actor, Integer llegada, Integer salida) {
         actor.attemptsTo(
-                CambiarIdioma.a("English (United States)")
+                angendar.la(llegada, salida)
         );
     }
 
-    @Entonces("{actor} debe poder observar que la página está en Inglés")
+    @Entonces("(A ){actor} deberá aparecerle lugares en París")
     public void verificarPaginaInglesEstadosUnidos(Actor actor) {
         actor.attemptsTo(
-                Ensure.that(ActualizacionInglesAirBnbPage.REFRESH_PAGE.resolveFor(actor).getText())
+                Ensure.that(ListadoLugaresPorCiudad.REFRESH_PAGE.resolveFor(actor).getText())
                         .isEqualTo("Stays")
         );
     }

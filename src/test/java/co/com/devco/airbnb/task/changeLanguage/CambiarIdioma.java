@@ -1,4 +1,4 @@
-package co.com.devco.airbnb.task;
+package co.com.devco.airbnb.task.changeLanguage;
 
 import co.com.devco.airbnb.page.changeLanguage.CambiarIdiomaAirBnbPage;
 import co.com.devco.airbnb.page.changeLanguage.EnglishUnitedStatesAirBnbPage;
