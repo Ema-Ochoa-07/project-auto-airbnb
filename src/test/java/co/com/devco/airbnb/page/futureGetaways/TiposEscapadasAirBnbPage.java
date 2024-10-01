@@ -6,6 +6,7 @@ import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("https://www.airbnb.com.co")
 public class TiposEscapadasAirBnbPage extends PageObject {
+    public static Target MAIN_PAGE_BOT = Target.the("botón airbnb").locatedBy("//a[@aria-label='Página de inicio de Airbnb']");
     public static Target TIPO_ESCAPADA_BOT = Target.the("botón arte y cultura").locatedBy("//button[@id='tab--seo-link-section-tabbed-dense-grid--1']");
     public static Target ESCAPADA_CIUDAD_BOT = Target.the("botón ciudad").locatedBy("//span[text()='París']");
 

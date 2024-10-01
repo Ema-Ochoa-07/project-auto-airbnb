@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("https://www.airbnb.com.co")
 public class ListadoCiudadAirBnbPage extends PageObject {
-    public static Target LISTADO_CIUDAD = Target.the("botón buscar escapadas").locatedBy("//span[@data-testid='stays-page-heading']");
+    public static Target LISTADO_CIUDAD = Target.the("botón listado de estadís por ciudad").locatedBy("//span[@data-testid='stays-page-heading' and contains(text(), 'lugares en')]");
 
 
 }

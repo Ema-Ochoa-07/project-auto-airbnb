@@ -32,7 +32,7 @@ public class CambioIdiomaStepDefinitions {
     public void verificarPaginaInglesEstadosUnidos(Actor actor) {
         actor.attemptsTo(
                 Ensure.that(ActualizacionInglesAirBnbPage.REFRESH_PAGE.resolveFor(actor).getText())
-                        .isEqualTo("Stays")
+                        .isEqualTo("lugares en")
         );
     }
 }
